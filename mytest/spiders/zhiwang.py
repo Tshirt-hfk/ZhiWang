@@ -33,6 +33,7 @@ class ZhiwangSpider(scrapy.Spider):
     def parse(self, response):
         f=open('result.json',"w")
         for result in response.xpath(r'//*[@class="GridTableContent"]/tr'):
+            result.
             item=MytestItem()
             item["title"]=result.xpath(r'./td[2]/a/text()').extract()
             item['author']=result.xpath(r'./td[3]/a/text()').extract()
